@@ -11,14 +11,16 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ounmo.LoginGoogle
+import androidx.lifecycle.ViewModelProvider
 import com.example.ounmo.R
 import com.example.ounmo.repository.PreferenceRepository
+import com.example.ounmo.viewmodel.LoginGoogleViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.SignInButton
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var loginGoogleViewModel: LoginGoogleViewModel
     val TAG: String = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,17 +61,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val loginGoogle = LoginGoogle(this)
+        loginGoogleViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory(application)
+        )[LoginGoogleViewModel::class.java]
         val activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            Log.d(LoginGoogle.TAG, "resultCode : ${it.resultCode}")
+            Log.d(LoginGoogleViewModel.TAG, "resultCode : ${it.resultCode}")
             val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
-            loginGoogle.handleSignInResult(task)
+            loginGoogleViewModel.handleSignInResult(task)
         }
         val btnGoogleSignIn = findViewById<SignInButton>(R.id.sign_in_button)
         btnGoogleSignIn.setOnClickListener {
-            loginGoogle.signIn(activityResultLauncher)
+            loginGoogleViewModel.signIn(activityResultLauncher)
         }
-        loginGoogle.signInSilently()
+        loginGoogleViewModel.signInSilently()
     }
 
     // 로그인 성공/실패 시 다이얼로그를 띄워주는 메소드

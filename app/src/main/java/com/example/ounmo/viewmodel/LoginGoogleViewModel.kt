@@ -1,10 +1,13 @@
-package com.example.ounmo
+package com.example.ounmo.viewmodel
 
+import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
+import androidx.lifecycle.AndroidViewModel
+import com.example.ounmo.R
 import com.example.ounmo.repository.LoginRepository
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -14,7 +17,9 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Scope
 import com.google.android.gms.tasks.Task
 
-class LoginGoogle(private val context: Context) {
+class LoginGoogleViewModel(application: Application) : AndroidViewModel(application) {
+    private val context = getApplication<Application>().applicationContext
+
     private val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
         .requestIdToken(context.getString(R.string.server_client_id))
         .requestScopes(Scope(Scopes.EMAIL), Scope(Scopes.PROFILE))

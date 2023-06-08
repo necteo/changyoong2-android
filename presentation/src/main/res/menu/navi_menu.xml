@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_fragment1"
+        android:enabled="true"
+        android:icon="@drawable/dumbell"
+        android:title="운동검색"/>
+
+    <item
+        android:id="@+id/item_fragment2"
+        android:enabled="true"
+        android:icon="@drawable/calendar"
+        android:title="운동계획"/>
+
+    <item
+        android:id="@+id/item_fragment3"
+        android:enabled="true"
+        android:icon="@drawable/graph"
+        android:title="운동기록"/>
+
+    <item
+        android:id="@+id/item_fragment4"
+        android:enabled="true"
+        android:icon="@drawable/community"
+        android:title="커뮤니티"/>
+
+    <item
+        android:id="@+id/item_fragment5"
+        android:enabled="true"
+        android:icon="@drawable/profile3"
+        android:title="마이페이지"/>
+
+
+
+</menu>

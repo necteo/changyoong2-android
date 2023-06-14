@@ -1,12 +1,14 @@
-package com.example.ounmo.view.activity
+package com.example.presentation.ui.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import com.example.ounmo.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.presentation.R
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var button_finalRegister : Button

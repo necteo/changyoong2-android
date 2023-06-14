@@ -1,4 +1,10 @@
 package com.example.data.datasource.local
 
-class UserAuthLocalDataSource {
+interface UserAuthLocalDataSource {
+
+    suspend fun checkLoginStatus(): Boolean
+
+    suspend fun registerAuthToken(accessToken: String, refreshToken: String)
+
+    suspend fun deleteAuthToken()
 }

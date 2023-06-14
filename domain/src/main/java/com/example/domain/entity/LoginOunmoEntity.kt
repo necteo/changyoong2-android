@@ -1,4 +1,5 @@
 package com.example.domain.entity
 
-class LoginOunmoEntity {
-}
+data class LoginOunmoEntity(
+    val isNewUser: Boolean
+)

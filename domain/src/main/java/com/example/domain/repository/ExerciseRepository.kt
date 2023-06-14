@@ -5,7 +5,9 @@ import com.example.domain.entity.ExercisesSearchRequestEntity
 import com.example.domain.util.Result
 import kotlinx.coroutines.flow.Flow
 
-interface ExerciseSearchRepository {
+interface ExerciseRepository {
+
+    fun findAll(): Flow<Result<List<ExerciseEntity>>>
 
     fun searchExerciseList(
         exercisesSearchRequestEntity: ExercisesSearchRequestEntity

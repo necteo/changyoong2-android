@@ -1,8 +1,27 @@
-package com.example.ounmo.view.fragment
+package com.example.presentation.ui.plan
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.ounmo.R
+import com.example.presentation.R
+import dagger.hilt.android.AndroidEntryPoint
 
-class PlanFragment : Fragment(R.layout.fragment_plan) {
+
+@AndroidEntryPoint
+class PlanFragment : Fragment() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_plan, container, false)
+    }
 
 }

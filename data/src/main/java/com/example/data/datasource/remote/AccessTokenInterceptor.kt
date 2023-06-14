@@ -1,4 +1,4 @@
-package com.example.data.di
+package com.example.data.datasource.remote
 
 import android.util.Log
 import com.example.data.datasource.local.preferences.PreferenceManager

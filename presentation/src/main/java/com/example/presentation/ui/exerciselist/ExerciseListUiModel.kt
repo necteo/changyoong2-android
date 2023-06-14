@@ -1,4 +1,9 @@
 package com.example.presentation.ui.exerciselist
 
-class ExerciseListUiModel {
+import com.example.presentation.model.Exercise
+
+sealed class ExerciseListUiModel {
+    object ExerciseEmptyList : ExerciseListUiModel()
+
+    data class ExerciseListNameItem(val name: Exercise) : ExerciseListUiModel()
 }

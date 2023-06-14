@@ -1,4 +1,8 @@
 package com.example.data.mapper
 
-class LoginOunmoMapper {
-}
+import com.example.data.model.response.LoginOunmoResponse
+import com.example.domain.entity.LoginOunmoEntity
+
+internal fun LoginOunmoResponse.toEntity() = LoginOunmoEntity(
+    isNewUser = isNewUser
+)

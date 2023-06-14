@@ -1,4 +1,4 @@
-package com.example.data.model
+package com.example.data.model.request
 
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName

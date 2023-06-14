@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login2"
-    tools:context=".view.activity.LoginActivity">
+    tools:context=".ui.login.LoginActivity">
 
     <TextView
         android:id="@+id/text_loginTitle"
@@ -83,33 +83,22 @@
         app:layout_constraintVertical_bias="0.680" />
 
 
-    <TextView
-        android:id="@+id/text_register"
-        android:layout_width="143dp"
-        android:layout_height="52dp"
-        android:text="회원가입"
-        android:textColor="@color/gray"
-        android:textSize="20sp"
+    <FrameLayout
+        android:layout_width="123dp"
+        android:layout_height="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921" />
-
-    <FrameLayout
-        android:layout_width="129dp"
-        android:layout_height="62dp"
-        app:layout_constraintBottom_toTopOf="@+id/text_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_login"
-        app:layout_constraintVertical_bias="0.529">
+        app:layout_constraintVertical_bias="0.25">
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="556dp" />
     </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
